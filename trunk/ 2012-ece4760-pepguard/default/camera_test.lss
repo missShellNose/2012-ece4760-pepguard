@@ -1,0 +1,1371 @@
+
+camera_test.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000044  00800100  000006cc  00000740  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000006cc  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          0000003d  00800144  00000710  00000784  2**0
+                  ALLOC
+  3 .debug_aranges 00000080  00000000  00000000  00000784  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  4 .debug_pubnames 000002db  00000000  00000000  00000804  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   00000b39  00000000  00000000  00000adf  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 0000049d  00000000  00000000  00001618  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   00000831  00000000  00000000  00001ab5  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  000001a0  00000000  00000000  000022e8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00000323  00000000  00000000  00002488  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    00000556  00000000  00000000  000027ab  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000090  00000000  00000000  00002d01  2**0
+                  CONTENTS, READONLY, DEBUGGING
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 46 00 	jmp	0x8c	; 0x8c <__ctors_end>
+   4:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   8:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+   c:	0c 94 ed 00 	jmp	0x1da	; 0x1da <__vector_3>
+  10:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  14:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  18:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  1c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  20:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  24:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  28:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  2c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  30:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  34:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  38:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  3c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  40:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  44:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  48:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  4c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  50:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  54:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  58:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  5c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  60:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  64:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  68:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  6c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  70:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  74:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  78:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  7c:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  80:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  84:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+  88:	0c 94 65 00 	jmp	0xca	; 0xca <__bad_interrupt>
+
+0000008c <__ctors_end>:
+  8c:	11 24       	eor	r1, r1
+  8e:	1f be       	out	0x3f, r1	; 63
+  90:	cf ef       	ldi	r28, 0xFF	; 255
+  92:	d0 e4       	ldi	r29, 0x40	; 64
+  94:	de bf       	out	0x3e, r29	; 62
+  96:	cd bf       	out	0x3d, r28	; 61
+
+00000098 <__do_copy_data>:
+  98:	11 e0       	ldi	r17, 0x01	; 1
+  9a:	a0 e0       	ldi	r26, 0x00	; 0
+  9c:	b1 e0       	ldi	r27, 0x01	; 1
+  9e:	ec ec       	ldi	r30, 0xCC	; 204
+  a0:	f6 e0       	ldi	r31, 0x06	; 6
+  a2:	00 e0       	ldi	r16, 0x00	; 0
+  a4:	0b bf       	out	0x3b, r16	; 59
+  a6:	02 c0       	rjmp	.+4      	; 0xac <__do_copy_data+0x14>
+  a8:	07 90       	elpm	r0, Z+
+  aa:	0d 92       	st	X+, r0
+  ac:	a4 34       	cpi	r26, 0x44	; 68
+  ae:	b1 07       	cpc	r27, r17
+  b0:	d9 f7       	brne	.-10     	; 0xa8 <__do_copy_data+0x10>
+
+000000b2 <__do_clear_bss>:
+  b2:	11 e0       	ldi	r17, 0x01	; 1
+  b4:	a4 e4       	ldi	r26, 0x44	; 68
+  b6:	b1 e0       	ldi	r27, 0x01	; 1
+  b8:	01 c0       	rjmp	.+2      	; 0xbc <.do_clear_bss_start>
+
+000000ba <.do_clear_bss_loop>:
+  ba:	1d 92       	st	X+, r1
+
+000000bc <.do_clear_bss_start>:
+  bc:	a1 38       	cpi	r26, 0x81	; 129
+  be:	b1 07       	cpc	r27, r17
+  c0:	e1 f7       	brne	.-8      	; 0xba <.do_clear_bss_loop>
+  c2:	0e 94 22 01 	call	0x244	; 0x244 <main>
+  c6:	0c 94 64 03 	jmp	0x6c8	; 0x6c8 <_exit>
+
+000000ca <__bad_interrupt>:
+  ca:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000ce <uart_init_0>:
+
+/*
+ * Initialize the UART (channel = 0 or 1) to uart_baud Bd, tx/rx, 8N1.
+   Set int_en to 1 if using interrupt mode, 0 if polling mode.
+ */
+void uart_init_0(unsigned long uart_baud, char int_en){
+  ce:	ff 92       	push	r15
+  d0:	0f 93       	push	r16
+  d2:	1f 93       	push	r17
+  d4:	8b 01       	movw	r16, r22
+  d6:	9c 01       	movw	r18, r24
+  d8:	f4 2e       	mov	r15, r20
+//	#if F_CPU < 2000000UL && defined(U2X0)
+	  UCSR0A = _BV(U2X0);             /* improve baud rate error by using 2x clk */
+  da:	82 e0       	ldi	r24, 0x02	; 2
+  dc:	80 93 c0 00 	sts	0x00C0, r24
+	  UBRR0L = (F_CPU / (8UL * uart_baud)) - 1;
+  e0:	83 e0       	ldi	r24, 0x03	; 3
+  e2:	00 0f       	add	r16, r16
+  e4:	11 1f       	adc	r17, r17
+  e6:	22 1f       	adc	r18, r18
+  e8:	33 1f       	adc	r19, r19
+  ea:	8a 95       	dec	r24
+  ec:	d1 f7       	brne	.-12     	; 0xe2 <uart_init_0+0x14>
+  ee:	60 e0       	ldi	r22, 0x00	; 0
+  f0:	74 e2       	ldi	r23, 0x24	; 36
+  f2:	84 ef       	ldi	r24, 0xF4	; 244
+  f4:	90 e0       	ldi	r25, 0x00	; 0
+  f6:	a9 01       	movw	r20, r18
+  f8:	98 01       	movw	r18, r16
+  fa:	0e 94 42 03 	call	0x684	; 0x684 <__udivmodsi4>
+  fe:	21 50       	subi	r18, 0x01	; 1
+ 100:	20 93 c4 00 	sts	0x00C4, r18
+//	#else
+//	  UBRR0L = (F_CPU / (16UL * uart_baud)) - 1;
+//	UBRR0L = 8;
+//	#endif
+	  UCSR0B = _BV(TXEN0) | _BV(RXEN0) | (int_en << RXCIE0); 
+ 104:	f7 94       	ror	r15
+ 106:	ff 24       	eor	r15, r15
+ 108:	f7 94       	ror	r15
+ 10a:	88 e1       	ldi	r24, 0x18	; 24
+ 10c:	f8 2a       	or	r15, r24
+ 10e:	f0 92 c1 00 	sts	0x00C1, r15
+}
+ 112:	1f 91       	pop	r17
+ 114:	0f 91       	pop	r16
+ 116:	ff 90       	pop	r15
+ 118:	08 95       	ret
+
+0000011a <uart_init_1>:
+
+void uart_init_1(unsigned long uart_baud, char int_en){
+ 11a:	ff 92       	push	r15
+ 11c:	0f 93       	push	r16
+ 11e:	1f 93       	push	r17
+ 120:	8b 01       	movw	r16, r22
+ 122:	9c 01       	movw	r18, r24
+ 124:	f4 2e       	mov	r15, r20
+//	#if(F_CPU < 2000000UL) && #ifdef(U2X1)
+	  UCSR1A = _BV(U2X1);             /* improve baud rate error by using 2x clk */
+ 126:	82 e0       	ldi	r24, 0x02	; 2
+ 128:	80 93 c8 00 	sts	0x00C8, r24
+	  UBRR1L = (F_CPU / (8UL * uart_baud)) - 1;
+ 12c:	93 e0       	ldi	r25, 0x03	; 3
+ 12e:	00 0f       	add	r16, r16
+ 130:	11 1f       	adc	r17, r17
+ 132:	22 1f       	adc	r18, r18
+ 134:	33 1f       	adc	r19, r19
+ 136:	9a 95       	dec	r25
+ 138:	d1 f7       	brne	.-12     	; 0x12e <uart_init_1+0x14>
+ 13a:	60 e0       	ldi	r22, 0x00	; 0
+ 13c:	74 e2       	ldi	r23, 0x24	; 36
+ 13e:	84 ef       	ldi	r24, 0xF4	; 244
+ 140:	90 e0       	ldi	r25, 0x00	; 0
+ 142:	a9 01       	movw	r20, r18
+ 144:	98 01       	movw	r18, r16
+ 146:	0e 94 42 03 	call	0x684	; 0x684 <__udivmodsi4>
+ 14a:	21 50       	subi	r18, 0x01	; 1
+ 14c:	20 93 cc 00 	sts	0x00CC, r18
+//	#else
+//	  UBRR1L = (F_CPU / (16UL * uart_baud)) - 1;
+//	UBRR1L = 8;
+//	#endif
+	  UCSR1B = _BV(TXEN1) | _BV(RXEN1) | (int_en << RXCIE1);
+ 150:	f7 94       	ror	r15
+ 152:	ff 24       	eor	r15, r15
+ 154:	f7 94       	ror	r15
+ 156:	88 e1       	ldi	r24, 0x18	; 24
+ 158:	f8 2a       	or	r15, r24
+ 15a:	f0 92 c9 00 	sts	0x00C9, r15
+}
+ 15e:	1f 91       	pop	r17
+ 160:	0f 91       	pop	r16
+ 162:	ff 90       	pop	r15
+ 164:	08 95       	ret
+
+00000166 <uart_putchar_0>:
+
+/*
+ * Send character c down the UART channel 0 or 1 Tx, wait until tx holding register
+ * is empty.
+ */
+int uart_putchar_0(char c){
+ 166:	98 2f       	mov	r25, r24
+	loop_until_bit_is_set(UCSR0A, UDRE0);
+ 168:	80 91 c0 00 	lds	r24, 0x00C0
+ 16c:	85 ff       	sbrs	r24, 5
+ 16e:	fc cf       	rjmp	.-8      	; 0x168 <uart_putchar_0+0x2>
+
+	UDR0 = c;
+ 170:	90 93 c6 00 	sts	0x00C6, r25
+	return 0;
+}
+ 174:	80 e0       	ldi	r24, 0x00	; 0
+ 176:	90 e0       	ldi	r25, 0x00	; 0
+ 178:	08 95       	ret
+
+0000017a <uart_putchar_1>:
+
+int uart_putchar_1(char c){
+ 17a:	98 2f       	mov	r25, r24
+	loop_until_bit_is_set(UCSR1A, UDRE1);
+ 17c:	80 91 c8 00 	lds	r24, 0x00C8
+ 180:	85 ff       	sbrs	r24, 5
+ 182:	fc cf       	rjmp	.-8      	; 0x17c <uart_putchar_1+0x2>
+	UDR1 = c;
+ 184:	90 93 ce 00 	sts	0x00CE, r25
+	return 0;
+}
+ 188:	80 e0       	ldi	r24, 0x00	; 0
+ 18a:	90 e0       	ldi	r25, 0x00	; 0
+ 18c:	08 95       	ret
+
+0000018e <uart_getchar_0>:
+
+/*
+ * Receive a character from the UART Rx on channel ch.
+ */
+char uart_getchar_0(void){
+ 18e:	80 91 c0 00 	lds	r24, 0x00C0
+ 192:	87 ff       	sbrs	r24, 7
+ 194:	fc cf       	rjmp	.-8      	; 0x18e <uart_getchar_0>
+	loop_until_bit_is_set(UCSR0A, RXC0);
+	if (UCSR0A & _BV(FE0)) return _FDEV_EOF;
+ 196:	80 91 c0 00 	lds	r24, 0x00C0
+ 19a:	84 ff       	sbrs	r24, 4
+ 19c:	02 c0       	rjmp	.+4      	; 0x1a2 <uart_getchar_0+0x14>
+ 19e:	8e ef       	ldi	r24, 0xFE	; 254
+ 1a0:	08 95       	ret
+	if (UCSR0A & _BV(DOR0)) return _FDEV_ERR;
+ 1a2:	80 91 c0 00 	lds	r24, 0x00C0
+ 1a6:	83 ff       	sbrs	r24, 3
+ 1a8:	02 c0       	rjmp	.+4      	; 0x1ae <uart_getchar_0+0x20>
+ 1aa:	8f ef       	ldi	r24, 0xFF	; 255
+ 1ac:	08 95       	ret
+	return UDR0;
+ 1ae:	80 91 c6 00 	lds	r24, 0x00C6
+}
+ 1b2:	08 95       	ret
+
+000001b4 <uart_getchar_1>:
+
+char uart_getchar_1(void){
+ 1b4:	80 91 c8 00 	lds	r24, 0x00C8
+ 1b8:	87 ff       	sbrs	r24, 7
+ 1ba:	fc cf       	rjmp	.-8      	; 0x1b4 <uart_getchar_1>
+	loop_until_bit_is_set(UCSR1A, RXC1);
+	if (UCSR1A & _BV(FE1)) return _FDEV_EOF;
+ 1bc:	80 91 c8 00 	lds	r24, 0x00C8
+ 1c0:	84 ff       	sbrs	r24, 4
+ 1c2:	02 c0       	rjmp	.+4      	; 0x1c8 <uart_getchar_1+0x14>
+ 1c4:	8e ef       	ldi	r24, 0xFE	; 254
+ 1c6:	08 95       	ret
+	if (UCSR1A & _BV(DOR1)) return _FDEV_ERR;
+ 1c8:	80 91 c8 00 	lds	r24, 0x00C8
+ 1cc:	83 ff       	sbrs	r24, 3
+ 1ce:	02 c0       	rjmp	.+4      	; 0x1d4 <uart_getchar_1+0x20>
+ 1d0:	8f ef       	ldi	r24, 0xFF	; 255
+ 1d2:	08 95       	ret
+//	uart_putchar_1(UDR1);
+	return UDR1;
+ 1d4:	80 91 ce 00 	lds	r24, 0x00CE
+}
+ 1d8:	08 95       	ret
+
+000001da <__vector_3>:
+#include "bt_lib.h"
+
+volatile unsigned char send;
+
+/* External triggered send command */
+ISR(INT2_vect){
+ 1da:	1f 92       	push	r1
+ 1dc:	0f 92       	push	r0
+ 1de:	0f b6       	in	r0, 0x3f	; 63
+ 1e0:	0f 92       	push	r0
+ 1e2:	0b b6       	in	r0, 0x3b	; 59
+ 1e4:	0f 92       	push	r0
+ 1e6:	11 24       	eor	r1, r1
+ 1e8:	2f 93       	push	r18
+ 1ea:	3f 93       	push	r19
+ 1ec:	8f 93       	push	r24
+ 1ee:	9f 93       	push	r25
+ 1f0:	ef 93       	push	r30
+ 1f2:	ff 93       	push	r31
+ 1f4:	80 ed       	ldi	r24, 0xD0	; 208
+ 1f6:	97 e0       	ldi	r25, 0x07	; 7
+    milliseconds can be achieved.
+ */
+void
+_delay_loop_2(uint16_t __count)
+{
+	__asm__ volatile (
+ 1f8:	20 e9       	ldi	r18, 0x90	; 144
+ 1fa:	31 e0       	ldi	r19, 0x01	; 1
+ 1fc:	f9 01       	movw	r30, r18
+ 1fe:	31 97       	sbiw	r30, 0x01	; 1
+ 200:	f1 f7       	brne	.-4      	; 0x1fe <__vector_3+0x24>
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 202:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 204:	d9 f7       	brne	.-10     	; 0x1fc <__vector_3+0x22>
+	_delay_ms(200); // debounce.. instead of using a state machine
+	if (PORTB &= 0x04) send = 1;
+ 206:	85 b1       	in	r24, 0x05	; 5
+ 208:	84 70       	andi	r24, 0x04	; 4
+ 20a:	85 b9       	out	0x05, r24	; 5
+ 20c:	85 b1       	in	r24, 0x05	; 5
+ 20e:	88 23       	and	r24, r24
+ 210:	19 f0       	breq	.+6      	; 0x218 <__vector_3+0x3e>
+ 212:	81 e0       	ldi	r24, 0x01	; 1
+ 214:	80 93 80 01 	sts	0x0180, r24
+}
+ 218:	ff 91       	pop	r31
+ 21a:	ef 91       	pop	r30
+ 21c:	9f 91       	pop	r25
+ 21e:	8f 91       	pop	r24
+ 220:	3f 91       	pop	r19
+ 222:	2f 91       	pop	r18
+ 224:	0f 90       	pop	r0
+ 226:	0b be       	out	0x3b, r0	; 59
+ 228:	0f 90       	pop	r0
+ 22a:	0f be       	out	0x3f, r0	; 63
+ 22c:	0f 90       	pop	r0
+ 22e:	1f 90       	pop	r1
+ 230:	18 95       	reti
+
+00000232 <interrupt_init>:
+
+/* Set up external interrupt on INT2 for pushbutton. */
+void interrupt_init(void){
+ 232:	14 b8       	out	0x04, r1	; 4
+	DDRB = 0x00;	// Port B as input
+	PORTB = 0x04; 	// pull-up resistor set on INT2
+ 234:	84 e0       	ldi	r24, 0x04	; 4
+ 236:	85 b9       	out	0x05, r24	; 5
+    EIMSK = 1<<INT2 ;					// turn on int2
+ 238:	8d bb       	out	0x1d, r24	; 29
+    EICRA = (1<<ISC21) | (1<<ISC20) ;	// rising edge
+ 23a:	80 e3       	ldi	r24, 0x30	; 48
+ 23c:	80 93 69 00 	sts	0x0069, r24
+	sei();  //enable global interrupts
+ 240:	78 94       	sei
+}
+ 242:	08 95       	ret
+
+00000244 <main>:
+
+int main(void){
+ 244:	cf 92       	push	r12
+ 246:	df 92       	push	r13
+ 248:	ef 92       	push	r14
+ 24a:	ff 92       	push	r15
+ 24c:	0f 93       	push	r16
+ 24e:	1f 93       	push	r17
+ 250:	df 93       	push	r29
+ 252:	cf 93       	push	r28
+ 254:	00 d0       	rcall	.+0      	; 0x256 <main+0x12>
+ 256:	cd b7       	in	r28, 0x3d	; 61
+ 258:	de b7       	in	r29, 0x3e	; 62
+	int size = 0;
+	DDRC = 0x10; // set C.4 to output (flash LED)
+ 25a:	80 e1       	ldi	r24, 0x10	; 16
+ 25c:	87 b9       	out	0x07, r24	; 7
+ 25e:	80 e1       	ldi	r24, 0x10	; 16
+ 260:	97 e2       	ldi	r25, 0x27	; 39
+ 262:	20 e9       	ldi	r18, 0x90	; 144
+ 264:	31 e0       	ldi	r19, 0x01	; 1
+ 266:	f9 01       	movw	r30, r18
+ 268:	31 97       	sbiw	r30, 0x01	; 1
+ 26a:	f1 f7       	brne	.-4      	; 0x268 <main+0x24>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 26c:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 26e:	d9 f7       	brne	.-10     	; 0x266 <main+0x22>
+    EICRA = (1<<ISC21) | (1<<ISC20) ;	// rising edge
+	sei();  //enable global interrupts
+}
+
+int main(void){
+	int size = 0;
+ 270:	1a 82       	std	Y+2, r1	; 0x02
+ 272:	19 82       	std	Y+1, r1	; 0x01
+	DDRC = 0x10; // set C.4 to output (flash LED)
+	_delay_ms(1000); // wait for power line to settle.n n      
+
+	bt_init(); 
+ 274:	0e 94 bf 01 	call	0x37e	; 0x37e <bt_init>
+	camera_init();	// prepare camera unit
+ 278:	0e 94 38 03 	call	0x670	; 0x670 <camera_init>
+	bt_setSrv();
+ 27c:	0e 94 a3 01 	call	0x346	; 0x346 <bt_setSrv>
+
+
+	camera_reset();
+ 280:	0e 94 8d 02 	call	0x51a	; 0x51a <camera_reset>
+	if (PORTB &= 0x04) send = 1;
+}
+
+/* Set up external interrupt on INT2 for pushbutton. */
+void interrupt_init(void){
+	DDRB = 0x00;	// Port B as input
+ 284:	14 b8       	out	0x04, r1	; 4
+	PORTB = 0x04; 	// pull-up resistor set on INT2
+ 286:	84 e0       	ldi	r24, 0x04	; 4
+ 288:	85 b9       	out	0x05, r24	; 5
+    EIMSK = 1<<INT2 ;					// turn on int2
+ 28a:	8d bb       	out	0x1d, r24	; 29
+    EICRA = (1<<ISC21) | (1<<ISC20) ;	// rising edge
+ 28c:	80 e3       	ldi	r24, 0x30	; 48
+ 28e:	80 93 69 00 	sts	0x0069, r24
+	sei();  //enable global interrupts
+ 292:	78 94       	sei
+ 294:	80 e3       	ldi	r24, 0x30	; 48
+ 296:	95 e7       	ldi	r25, 0x75	; 117
+ 298:	20 e9       	ldi	r18, 0x90	; 144
+ 29a:	31 e0       	ldi	r19, 0x01	; 1
+ 29c:	f9 01       	movw	r30, r18
+ 29e:	31 97       	sbiw	r30, 0x01	; 1
+ 2a0:	f1 f7       	brne	.-4      	; 0x29e <main+0x5a>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 2a2:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 2a4:	d9 f7       	brne	.-10     	; 0x29c <main+0x58>
+
+	camera_reset();
+	interrupt_init();
+	_delay_ms(3000); // wait for 3sec before taking the first pic...
+
+	send = 0;
+ 2a6:	10 92 80 01 	sts	0x0180, r1
+	while(1){
+		if (send){
+//			PORTC = 0x10;
+			camera_takePic();
+//			_delay_ms(3);
+			camera_getSize(&size);
+ 2aa:	6e 01       	movw	r12, r28
+ 2ac:	08 94       	sec
+ 2ae:	c1 1c       	adc	r12, r1
+ 2b0:	d1 1c       	adc	r13, r1
+ 2b2:	80 ea       	ldi	r24, 0xA0	; 160
+ 2b4:	e8 2e       	mov	r14, r24
+ 2b6:	8f e0       	ldi	r24, 0x0F	; 15
+ 2b8:	f8 2e       	mov	r15, r24
+	interrupt_init();
+	_delay_ms(3000); // wait for 3sec before taking the first pic...
+
+	send = 0;
+	while(1){
+		if (send){
+ 2ba:	00 ee       	ldi	r16, 0xE0	; 224
+ 2bc:	1e e2       	ldi	r17, 0x2E	; 46
+ 2be:	80 91 80 01 	lds	r24, 0x0180
+ 2c2:	88 23       	and	r24, r24
+ 2c4:	e1 f3       	breq	.-8      	; 0x2be <main+0x7a>
+//			PORTC = 0x10;
+			camera_takePic();
+ 2c6:	0e 94 63 02 	call	0x4c6	; 0x4c6 <camera_takePic>
+//			_delay_ms(3);
+			camera_getSize(&size);
+ 2ca:	c6 01       	movw	r24, r12
+ 2cc:	0e 94 ab 02 	call	0x556	; 0x556 <camera_getSize>
+ 2d0:	c7 01       	movw	r24, r14
+ 2d2:	01 97       	sbiw	r24, 0x01	; 1
+ 2d4:	f1 f7       	brne	.-4      	; 0x2d2 <main+0x8e>
+//			PORTC = 0x00;
+			_delay_ms(1);
+			bt_sendMsg();
+ 2d6:	0e 94 78 01 	call	0x2f0	; 0x2f0 <bt_sendMsg>
+ 2da:	c8 01       	movw	r24, r16
+ 2dc:	01 97       	sbiw	r24, 0x01	; 1
+ 2de:	f1 f7       	brne	.-4      	; 0x2dc <main+0x98>
+			_delay_ms(3);
+			camera_getFile();
+ 2e0:	0e 94 db 02 	call	0x5b6	; 0x5b6 <camera_getFile>
+			send = 0;
+ 2e4:	10 92 80 01 	sts	0x0180, r1
+ 2e8:	ea cf       	rjmp	.-44     	; 0x2be <main+0x7a>
+
+000002ea <bt_sendPicture>:
+	uart_putchar_0('e');
+	uart_putchar_0('r');
+	uart_putchar_0('t');
+}
+
+void bt_sendPicture(char c){
+ 2ea:	0e 94 b3 00 	call	0x166	; 0x166 <uart_putchar_0>
+	uart_putchar_0(c);
+}
+ 2ee:	08 95       	ret
+
+000002f0 <bt_sendMsg>:
+
+void bt_setSrv(void){
+	bt_sendCommand(SET_SERVER, BT_RESPONSE, 11, 8);
+}
+
+void bt_sendMsg(void){
+ 2f0:	81 e6       	ldi	r24, 0x61	; 97
+ 2f2:	0e 94 b3 00 	call	0x166	; 0x166 <uart_putchar_0>
+	uart_putchar_0('a');
+	uart_putchar_0('l');
+ 2f6:	8c e6       	ldi	r24, 0x6C	; 108
+ 2f8:	0e 94 b3 00 	call	0x166	; 0x166 <uart_putchar_0>
+	uart_putchar_0('e');
+ 2fc:	85 e6       	ldi	r24, 0x65	; 101
+ 2fe:	0e 94 b3 00 	call	0x166	; 0x166 <uart_putchar_0>
+	uart_putchar_0('r');
+ 302:	82 e7       	ldi	r24, 0x72	; 114
+ 304:	0e 94 b3 00 	call	0x166	; 0x166 <uart_putchar_0>
+	uart_putchar_0('t');
+ 308:	84 e7       	ldi	r24, 0x74	; 116
+ 30a:	0e 94 b3 00 	call	0x166	; 0x166 <uart_putchar_0>
+}
+ 30e:	08 95       	ret
+
+00000310 <bt_sendCommand>:
+}
+**/
+
+/* Send camera command (cmd) that has (l1) bytes 
+	and store response of (l2) bytes at (resp). */
+void bt_sendCommand(const unsigned char *cmd, unsigned char *resp, int l1, int l2){
+ 310:	ef 92       	push	r14
+ 312:	ff 92       	push	r15
+ 314:	0f 93       	push	r16
+ 316:	1f 93       	push	r17
+ 318:	cf 93       	push	r28
+ 31a:	df 93       	push	r29
+ 31c:	8c 01       	movw	r16, r24
+ 31e:	7a 01       	movw	r14, r20
+ 320:	c0 e0       	ldi	r28, 0x00	; 0
+ 322:	d0 e0       	ldi	r29, 0x00	; 0
+ 324:	06 c0       	rjmp	.+12     	; 0x332 <bt_sendCommand+0x22>
+		fprintf(stdout, "| %c ", *ptr_cmd++);
+	fprintf(stdout,"\n\r*****Response*****\n\r");
+**/
+	// send command on Tx
+	for (i=0; i<l1; i++)
+		uart_putchar_0(*cmd++);
+ 326:	f8 01       	movw	r30, r16
+ 328:	81 91       	ld	r24, Z+
+ 32a:	8f 01       	movw	r16, r30
+ 32c:	0e 94 b3 00 	call	0x166	; 0x166 <uart_putchar_0>
+	for (i=0; i<l1; i++)
+		fprintf(stdout, "| %c ", *ptr_cmd++);
+	fprintf(stdout,"\n\r*****Response*****\n\r");
+**/
+	// send command on Tx
+	for (i=0; i<l1; i++)
+ 330:	21 96       	adiw	r28, 0x01	; 1
+ 332:	ce 15       	cp	r28, r14
+ 334:	df 05       	cpc	r29, r15
+ 336:	bc f3       	brlt	.-18     	; 0x326 <bt_sendCommand+0x16>
+	// display response on uart_0
+	for (i=0; i<l2; i++)
+		fprintf(stdout, "| %c ", *ptr_resp++);
+	fprintf(stdout, "\n\r\n\r");
+**/
+}
+ 338:	df 91       	pop	r29
+ 33a:	cf 91       	pop	r28
+ 33c:	1f 91       	pop	r17
+ 33e:	0f 91       	pop	r16
+ 340:	ff 90       	pop	r15
+ 342:	ef 90       	pop	r14
+ 344:	08 95       	ret
+
+00000346 <bt_setSrv>:
+   Return 1 if successful, 0 if failed. */
+void bt_getInfo(void){
+	bt_sendCommand(GET_INFO, BT_RESPONSE, 4, 19);
+}
+
+void bt_setSrv(void){
+ 346:	cf 93       	push	r28
+ 348:	df 93       	push	r29
+ 34a:	c4 e0       	ldi	r28, 0x04	; 4
+ 34c:	d1 e0       	ldi	r29, 0x01	; 1
+		fprintf(stdout, "| %c ", *ptr_cmd++);
+	fprintf(stdout,"\n\r*****Response*****\n\r");
+**/
+	// send command on Tx
+	for (i=0; i<l1; i++)
+		uart_putchar_0(*cmd++);
+ 34e:	89 91       	ld	r24, Y+
+ 350:	0e 94 b3 00 	call	0x166	; 0x166 <uart_putchar_0>
+	for (i=0; i<l1; i++)
+		fprintf(stdout, "| %c ", *ptr_cmd++);
+	fprintf(stdout,"\n\r*****Response*****\n\r");
+**/
+	// send command on Tx
+	for (i=0; i<l1; i++)
+ 354:	81 e0       	ldi	r24, 0x01	; 1
+ 356:	cf 30       	cpi	r28, 0x0F	; 15
+ 358:	d8 07       	cpc	r29, r24
+ 35a:	c9 f7       	brne	.-14     	; 0x34e <bt_setSrv+0x8>
+	bt_sendCommand(GET_INFO, BT_RESPONSE, 4, 19);
+}
+
+void bt_setSrv(void){
+	bt_sendCommand(SET_SERVER, BT_RESPONSE, 11, 8);
+}
+ 35c:	df 91       	pop	r29
+ 35e:	cf 91       	pop	r28
+ 360:	08 95       	ret
+
+00000362 <bt_getInfo>:
+**/
+}
+
+/* Read the size of the JPEG file. 2-byte response stored in argument.
+   Return 1 if successful, 0 if failed. */
+void bt_getInfo(void){
+ 362:	cf 93       	push	r28
+ 364:	df 93       	push	r29
+ 366:	c0 e0       	ldi	r28, 0x00	; 0
+ 368:	d1 e0       	ldi	r29, 0x01	; 1
+		fprintf(stdout, "| %c ", *ptr_cmd++);
+	fprintf(stdout,"\n\r*****Response*****\n\r");
+**/
+	// send command on Tx
+	for (i=0; i<l1; i++)
+		uart_putchar_0(*cmd++);
+ 36a:	89 91       	ld	r24, Y+
+ 36c:	0e 94 b3 00 	call	0x166	; 0x166 <uart_putchar_0>
+	for (i=0; i<l1; i++)
+		fprintf(stdout, "| %c ", *ptr_cmd++);
+	fprintf(stdout,"\n\r*****Response*****\n\r");
+**/
+	// send command on Tx
+	for (i=0; i<l1; i++)
+ 370:	81 e0       	ldi	r24, 0x01	; 1
+ 372:	c4 30       	cpi	r28, 0x04	; 4
+ 374:	d8 07       	cpc	r29, r24
+ 376:	c9 f7       	brne	.-14     	; 0x36a <bt_getInfo+0x8>
+
+/* Read the size of the JPEG file. 2-byte response stored in argument.
+   Return 1 if successful, 0 if failed. */
+void bt_getInfo(void){
+	bt_sendCommand(GET_INFO, BT_RESPONSE, 4, 19);
+}
+ 378:	df 91       	pop	r29
+ 37a:	cf 91       	pop	r28
+ 37c:	08 95       	ret
+
+0000037e <bt_init>:
+// UART file descriptor
+// putchar_1 and getchar_1 are in uart.c; using channel 1 for stdio 
+//FILE uart_str = FDEV_SETUP_STREAM(uart_putchar_0, uart_getchar_0, _FDEV_SETUP_RW);
+
+/* Initialize camera. Return 1 if successful, 0 if failed. */
+void bt_init(void){
+ 37e:	40 e0       	ldi	r20, 0x00	; 0
+ 380:	60 e0       	ldi	r22, 0x00	; 0
+ 382:	72 ec       	ldi	r23, 0xC2	; 194
+ 384:	81 e0       	ldi	r24, 0x01	; 1
+ 386:	90 e0       	ldi	r25, 0x00	; 0
+ 388:	0e 94 67 00 	call	0xce	; 0xce <uart_init_0>
+	// channel 1 UART at 115200 baud, not using interrupt 
+	// channel 0 UART at 9600 baud without interrupt to echo to computer
+	uart_init_0(115200, 0);
+//	uart_init_1(115200, 0);
+}
+ 38c:	08 95       	ret
+
+0000038e <camera_getBlock>:
+}
+
+/* Read a block(BLOCKSIZE) of data starting at location (addr)
+   and store return value in (response). 
+   Return 1 on success, 0 on failure. */
+int camera_getBlock(char *response, int addr){
+ 38e:	cf 92       	push	r12
+ 390:	df 92       	push	r13
+ 392:	ef 92       	push	r14
+ 394:	ff 92       	push	r15
+ 396:	0f 93       	push	r16
+ 398:	1f 93       	push	r17
+ 39a:	cf 93       	push	r28
+ 39c:	df 93       	push	r29
+ 39e:	6c 01       	movw	r12, r24
+ 3a0:	8b 01       	movw	r16, r22
+	int i;
+	unsigned char *ptr = READ_DATA;
+ 3a2:	c7 e3       	ldi	r28, 0x37	; 55
+ 3a4:	d1 e0       	ldi	r29, 0x01	; 1
+	unsigned char *resp_ptr = CAM_RESPONSE; 
+	unsigned char *ref_ptr = RD_Response;
+	// send command to get block of data
+	for (i = 0; i < 8; i++) 
+		uart_putchar_1(*ptr++);
+ 3a6:	89 91       	ld	r24, Y+
+ 3a8:	0e 94 bd 00 	call	0x17a	; 0x17a <uart_putchar_1>
+	int i;
+	unsigned char *ptr = READ_DATA;
+	unsigned char *resp_ptr = CAM_RESPONSE; 
+	unsigned char *ref_ptr = RD_Response;
+	// send command to get block of data
+	for (i = 0; i < 8; i++) 
+ 3ac:	81 e0       	ldi	r24, 0x01	; 1
+ 3ae:	cf 33       	cpi	r28, 0x3F	; 63
+ 3b0:	d8 07       	cpc	r29, r24
+ 3b2:	c9 f7       	brne	.-14     	; 0x3a6 <camera_getBlock+0x18>
+   Return 1 on success, 0 on failure. */
+int camera_getBlock(char *response, int addr){
+	int i;
+	unsigned char *ptr = READ_DATA;
+	unsigned char *resp_ptr = CAM_RESPONSE; 
+	unsigned char *ref_ptr = RD_Response;
+ 3b4:	9f e3       	ldi	r25, 0x3F	; 63
+ 3b6:	e9 2e       	mov	r14, r25
+ 3b8:	91 e0       	ldi	r25, 0x01	; 1
+ 3ba:	f9 2e       	mov	r15, r25
+	// send command to get block of data
+	for (i = 0; i < 8; i++) 
+		uart_putchar_1(*ptr++);
+	uart_putchar_1(addr >> 8); // starting address of block
+ 3bc:	81 2f       	mov	r24, r17
+ 3be:	99 27       	eor	r25, r25
+ 3c0:	87 fd       	sbrc	r24, 7
+ 3c2:	9a 95       	dec	r25
+ 3c4:	0e 94 bd 00 	call	0x17a	; 0x17a <uart_putchar_1>
+	uart_putchar_1((char)addr);
+ 3c8:	80 2f       	mov	r24, r16
+ 3ca:	0e 94 bd 00 	call	0x17a	; 0x17a <uart_putchar_1>
+	uart_putchar_1(0x00);
+ 3ce:	80 e0       	ldi	r24, 0x00	; 0
+ 3d0:	0e 94 bd 00 	call	0x17a	; 0x17a <uart_putchar_1>
+	uart_putchar_1(0x00);
+ 3d4:	80 e0       	ldi	r24, 0x00	; 0
+ 3d6:	0e 94 bd 00 	call	0x17a	; 0x17a <uart_putchar_1>
+	uart_putchar_1(BLOCKSIZE >> 8); // block size
+ 3da:	80 e0       	ldi	r24, 0x00	; 0
+ 3dc:	0e 94 bd 00 	call	0x17a	; 0x17a <uart_putchar_1>
+	uart_putchar_1((char)BLOCKSIZE);
+ 3e0:	80 e2       	ldi	r24, 0x20	; 32
+ 3e2:	0e 94 bd 00 	call	0x17a	; 0x17a <uart_putchar_1>
+	uart_putchar_1(0x00); // spacing interval
+ 3e6:	80 e0       	ldi	r24, 0x00	; 0
+ 3e8:	0e 94 bd 00 	call	0x17a	; 0x17a <uart_putchar_1>
+	uart_putchar_1(0x0A);
+ 3ec:	8a e0       	ldi	r24, 0x0A	; 10
+ 3ee:	0e 94 bd 00 	call	0x17a	; 0x17a <uart_putchar_1>
+ 3f2:	c4 e4       	ldi	r28, 0x44	; 68
+ 3f4:	d1 e0       	ldi	r29, 0x01	; 1
+
+	// get the response header (76, 0, 32, 0, 0)
+	for (i = 0; i < 5; i++){
+		*resp_ptr=uart_getchar_1();
+ 3f6:	0e 94 da 00 	call	0x1b4	; 0x1b4 <uart_getchar_1>
+ 3fa:	89 93       	st	Y+, r24
+		if (*resp_ptr++ != *ref_ptr++)	return 0;
+ 3fc:	f7 01       	movw	r30, r14
+ 3fe:	91 91       	ld	r25, Z+
+ 400:	7f 01       	movw	r14, r30
+ 402:	89 17       	cp	r24, r25
+ 404:	19 f0       	breq	.+6      	; 0x40c <camera_getBlock+0x7e>
+ 406:	20 e0       	ldi	r18, 0x00	; 0
+ 408:	30 e0       	ldi	r19, 0x00	; 0
+ 40a:	1b c0       	rjmp	.+54     	; 0x442 <camera_getBlock+0xb4>
+	uart_putchar_1((char)BLOCKSIZE);
+	uart_putchar_1(0x00); // spacing interval
+	uart_putchar_1(0x0A);
+
+	// get the response header (76, 0, 32, 0, 0)
+	for (i = 0; i < 5; i++){
+ 40c:	f1 e0       	ldi	r31, 0x01	; 1
+ 40e:	c9 34       	cpi	r28, 0x49	; 73
+ 410:	df 07       	cpc	r29, r31
+ 412:	89 f7       	brne	.-30     	; 0x3f6 <camera_getBlock+0x68>
+ 414:	c0 e0       	ldi	r28, 0x00	; 0
+ 416:	d0 e0       	ldi	r29, 0x00	; 0
+	}
+	
+	i = 0; 
+	// get the actual block of data
+	while (i < BLOCKSIZE){
+		*response++ = uart_getchar_1();
+ 418:	0e 94 da 00 	call	0x1b4	; 0x1b4 <uart_getchar_1>
+ 41c:	f6 01       	movw	r30, r12
+ 41e:	81 93       	st	Z+, r24
+ 420:	6f 01       	movw	r12, r30
+		i++;
+ 422:	21 96       	adiw	r28, 0x01	; 1
+		if (*resp_ptr++ != *ref_ptr++)	return 0;
+	}
+	
+	i = 0; 
+	// get the actual block of data
+	while (i < BLOCKSIZE){
+ 424:	c0 32       	cpi	r28, 0x20	; 32
+ 426:	d1 05       	cpc	r29, r1
+ 428:	b9 f7       	brne	.-18     	; 0x418 <camera_getBlock+0x8a>
+		*response++ = uart_getchar_1();
+		i++;
+	}
+	// get the terminating string (76, 0, 32, 0, 0) 
+	for (i = 0; i < 5; i++) uart_getchar_1();
+ 42a:	0e 94 da 00 	call	0x1b4	; 0x1b4 <uart_getchar_1>
+ 42e:	0e 94 da 00 	call	0x1b4	; 0x1b4 <uart_getchar_1>
+ 432:	0e 94 da 00 	call	0x1b4	; 0x1b4 <uart_getchar_1>
+ 436:	0e 94 da 00 	call	0x1b4	; 0x1b4 <uart_getchar_1>
+ 43a:	0e 94 da 00 	call	0x1b4	; 0x1b4 <uart_getchar_1>
+ 43e:	21 e0       	ldi	r18, 0x01	; 1
+ 440:	30 e0       	ldi	r19, 0x00	; 0
+	return 1;
+}
+ 442:	c9 01       	movw	r24, r18
+ 444:	df 91       	pop	r29
+ 446:	cf 91       	pop	r28
+ 448:	1f 91       	pop	r17
+ 44a:	0f 91       	pop	r16
+ 44c:	ff 90       	pop	r15
+ 44e:	ef 90       	pop	r14
+ 450:	df 90       	pop	r13
+ 452:	cf 90       	pop	r12
+ 454:	08 95       	ret
+
+00000456 <camera_sendCommand>:
+	return 1;
+}
+
+/* Send camera command (cmd) that has (l1) bytes 
+	and store response of (l2) bytes at (resp). */
+void camera_sendCommand(const unsigned char *cmd, unsigned char *resp, int l1, int l2){
+ 456:	af 92       	push	r10
+ 458:	bf 92       	push	r11
+ 45a:	cf 92       	push	r12
+ 45c:	df 92       	push	r13
+ 45e:	ef 92       	push	r14
+ 460:	ff 92       	push	r15
+ 462:	0f 93       	push	r16
+ 464:	1f 93       	push	r17
+ 466:	cf 93       	push	r28
+ 468:	df 93       	push	r29
+ 46a:	8c 01       	movw	r16, r24
+ 46c:	6b 01       	movw	r12, r22
+ 46e:	7a 01       	movw	r14, r20
+ 470:	59 01       	movw	r10, r18
+ 472:	c0 e0       	ldi	r28, 0x00	; 0
+ 474:	d0 e0       	ldi	r29, 0x00	; 0
+ 476:	06 c0       	rjmp	.+12     	; 0x484 <camera_sendCommand+0x2e>
+//		fprintf(stdout, "| %x ", *ptr_cmd++);
+//	fprintf(stdout,"\n\r*****Response*****\n\r");
+
+	// send command on Tx
+	for (i=0; i<l1; i++)
+		uart_putchar_1(*cmd++);
+ 478:	f8 01       	movw	r30, r16
+ 47a:	81 91       	ld	r24, Z+
+ 47c:	8f 01       	movw	r16, r30
+ 47e:	0e 94 bd 00 	call	0x17a	; 0x17a <uart_putchar_1>
+//	for (i=0; i<l1; i++)
+//		fprintf(stdout, "| %x ", *ptr_cmd++);
+//	fprintf(stdout,"\n\r*****Response*****\n\r");
+
+	// send command on Tx
+	for (i=0; i<l1; i++)
+ 482:	21 96       	adiw	r28, 0x01	; 1
+ 484:	ce 15       	cp	r28, r14
+ 486:	df 05       	cpc	r29, r15
+ 488:	bc f3       	brlt	.-18     	; 0x478 <camera_sendCommand+0x22>
+ 48a:	02 c0       	rjmp	.+4      	; 0x490 <camera_sendCommand+0x3a>
+		uart_putchar_1(*cmd++);
+	while ( UCSR1A & (1<<RXC1) ) dummy = UDR1;
+ 48c:	80 91 ce 00 	lds	r24, 0x00CE
+ 490:	80 91 c8 00 	lds	r24, 0x00C8
+ 494:	87 fd       	sbrc	r24, 7
+ 496:	fa cf       	rjmp	.-12     	; 0x48c <camera_sendCommand+0x36>
+ 498:	c0 e0       	ldi	r28, 0x00	; 0
+ 49a:	d0 e0       	ldi	r29, 0x00	; 0
+ 49c:	06 c0       	rjmp	.+12     	; 0x4aa <camera_sendCommand+0x54>
+	// receive response on Rx
+	for (i=0; i<l2; i++)
+		*resp++=uart_getchar_1();	
+ 49e:	0e 94 da 00 	call	0x1b4	; 0x1b4 <uart_getchar_1>
+ 4a2:	f6 01       	movw	r30, r12
+ 4a4:	81 93       	st	Z+, r24
+ 4a6:	6f 01       	movw	r12, r30
+	// send command on Tx
+	for (i=0; i<l1; i++)
+		uart_putchar_1(*cmd++);
+	while ( UCSR1A & (1<<RXC1) ) dummy = UDR1;
+	// receive response on Rx
+	for (i=0; i<l2; i++)
+ 4a8:	21 96       	adiw	r28, 0x01	; 1
+ 4aa:	ca 15       	cp	r28, r10
+ 4ac:	db 05       	cpc	r29, r11
+ 4ae:	bc f3       	brlt	.-18     	; 0x49e <camera_sendCommand+0x48>
+	
+	// display response on uart_1
+//	for (i=0; i<l2; i++)
+//		fprintf(stdout, "| %x", *ptr_resp++);
+//	fprintf(stdout, "\n\r\n\r");
+}
+ 4b0:	df 91       	pop	r29
+ 4b2:	cf 91       	pop	r28
+ 4b4:	1f 91       	pop	r17
+ 4b6:	0f 91       	pop	r16
+ 4b8:	ff 90       	pop	r15
+ 4ba:	ef 90       	pop	r14
+ 4bc:	df 90       	pop	r13
+ 4be:	cf 90       	pop	r12
+ 4c0:	bf 90       	pop	r11
+ 4c2:	af 90       	pop	r10
+ 4c4:	08 95       	ret
+
+000004c6 <camera_takePic>:
+		if (*resp_ptr++ != *ref_ptr++) return 0;
+	return 1;
+}
+
+/* Take a picture. Return 1 if successful, 0 if failed. */
+char camera_takePic(void){
+ 4c6:	cf 93       	push	r28
+ 4c8:	df 93       	push	r29
+	unsigned char *resp_ptr = CAM_RESPONSE;
+	unsigned char *ref_ptr = TP_Response;
+	int i;
+	PORTC = 0x10;
+ 4ca:	80 e1       	ldi	r24, 0x10	; 16
+ 4cc:	88 b9       	out	0x08, r24	; 8
+ 4ce:	80 e2       	ldi	r24, 0x20	; 32
+ 4d0:	93 e0       	ldi	r25, 0x03	; 3
+ 4d2:	20 e9       	ldi	r18, 0x90	; 144
+ 4d4:	31 e0       	ldi	r19, 0x01	; 1
+ 4d6:	f9 01       	movw	r30, r18
+ 4d8:	31 97       	sbiw	r30, 0x01	; 1
+ 4da:	f1 f7       	brne	.-4      	; 0x4d8 <camera_takePic+0x12>
+		{
+			// wait 1/10 ms
+			_delay_loop_2(((F_CPU) / 4e3) / 10);
+			__ticks --;
+ 4dc:	01 97       	sbiw	r24, 0x01	; 1
+		__ticks = 1;
+	else if (__tmp > 65535)
+	{
+		//	__ticks = requested delay in 1/10 ms
+		__ticks = (uint16_t) (__ms * 10.0);
+		while(__ticks)
+ 4de:	d9 f7       	brne	.-10     	; 0x4d6 <camera_takePic+0x10>
+}
+
+/* Take a picture. Return 1 if successful, 0 if failed. */
+char camera_takePic(void){
+	unsigned char *resp_ptr = CAM_RESPONSE;
+	unsigned char *ref_ptr = TP_Response;
+ 4e0:	c8 e2       	ldi	r28, 0x28	; 40
+ 4e2:	d1 e0       	ldi	r29, 0x01	; 1
+	int i;
+	PORTC = 0x10;
+	_delay_ms(80);
+	PORTC = 0x00;
+ 4e4:	18 b8       	out	0x08, r1	; 8
+	camera_sendCommand(TAKE_PICTURE, CAM_RESPONSE, 5, 5);
+ 4e6:	25 e0       	ldi	r18, 0x05	; 5
+ 4e8:	30 e0       	ldi	r19, 0x00	; 0
+ 4ea:	45 e0       	ldi	r20, 0x05	; 5
+ 4ec:	50 e0       	ldi	r21, 0x00	; 0
+ 4ee:	64 e4       	ldi	r22, 0x44	; 68
+ 4f0:	71 e0       	ldi	r23, 0x01	; 1
+ 4f2:	83 e2       	ldi	r24, 0x23	; 35
+ 4f4:	91 e0       	ldi	r25, 0x01	; 1
+ 4f6:	0e 94 2b 02 	call	0x456	; 0x456 <camera_sendCommand>
+ 4fa:	e4 e4       	ldi	r30, 0x44	; 68
+ 4fc:	f1 e0       	ldi	r31, 0x01	; 1
+	for (i = 0; i < 5; i++)
+		if (*resp_ptr++ != *ref_ptr++) return 0;
+ 4fe:	91 91       	ld	r25, Z+
+ 500:	89 91       	ld	r24, Y+
+ 502:	98 17       	cp	r25, r24
+ 504:	11 f0       	breq	.+4      	; 0x50a <camera_takePic+0x44>
+ 506:	80 e0       	ldi	r24, 0x00	; 0
+ 508:	05 c0       	rjmp	.+10     	; 0x514 <camera_takePic+0x4e>
+	int i;
+	PORTC = 0x10;
+	_delay_ms(80);
+	PORTC = 0x00;
+	camera_sendCommand(TAKE_PICTURE, CAM_RESPONSE, 5, 5);
+	for (i = 0; i < 5; i++)
+ 50a:	81 e0       	ldi	r24, 0x01	; 1
+ 50c:	e9 34       	cpi	r30, 0x49	; 73
+ 50e:	f8 07       	cpc	r31, r24
+ 510:	b1 f7       	brne	.-20     	; 0x4fe <camera_takePic+0x38>
+ 512:	81 e0       	ldi	r24, 0x01	; 1
+		if (*resp_ptr++ != *ref_ptr++) return 0;
+	return 1;
+}
+ 514:	df 91       	pop	r29
+ 516:	cf 91       	pop	r28
+ 518:	08 95       	ret
+
+0000051a <camera_reset>:
+	*response = (unsigned int) (((*resp_ptr) << 8) | (*(resp_ptr+1)));
+	return 1;
+}
+
+/* Reset the camera. Return 1 if successful, 0 if failed. */
+char camera_reset(void){
+ 51a:	cf 93       	push	r28
+ 51c:	df 93       	push	r29
+	unsigned char *resp_ptr = CAM_RESPONSE;
+	unsigned char *ref_ptr = RS_Response;
+ 51e:	cf e1       	ldi	r28, 0x1F	; 31
+ 520:	d1 e0       	ldi	r29, 0x01	; 1
+	int i;
+	camera_sendCommand(RESET_CAMERA, CAM_RESPONSE, 4, 4);
+ 522:	24 e0       	ldi	r18, 0x04	; 4
+ 524:	30 e0       	ldi	r19, 0x00	; 0
+ 526:	44 e0       	ldi	r20, 0x04	; 4
+ 528:	50 e0       	ldi	r21, 0x00	; 0
+ 52a:	64 e4       	ldi	r22, 0x44	; 68
+ 52c:	71 e0       	ldi	r23, 0x01	; 1
+ 52e:	8b e1       	ldi	r24, 0x1B	; 27
+ 530:	91 e0       	ldi	r25, 0x01	; 1
+ 532:	0e 94 2b 02 	call	0x456	; 0x456 <camera_sendCommand>
+ 536:	e4 e4       	ldi	r30, 0x44	; 68
+ 538:	f1 e0       	ldi	r31, 0x01	; 1
+	for (i = 0; i < 4; i++)
+		if (*resp_ptr++ != *ref_ptr++) return 0;
+ 53a:	91 91       	ld	r25, Z+
+ 53c:	89 91       	ld	r24, Y+
+ 53e:	98 17       	cp	r25, r24
+ 540:	11 f0       	breq	.+4      	; 0x546 <camera_reset+0x2c>
+ 542:	80 e0       	ldi	r24, 0x00	; 0
+ 544:	05 c0       	rjmp	.+10     	; 0x550 <camera_reset+0x36>
+char camera_reset(void){
+	unsigned char *resp_ptr = CAM_RESPONSE;
+	unsigned char *ref_ptr = RS_Response;
+	int i;
+	camera_sendCommand(RESET_CAMERA, CAM_RESPONSE, 4, 4);
+	for (i = 0; i < 4; i++)
+ 546:	81 e0       	ldi	r24, 0x01	; 1
+ 548:	e8 34       	cpi	r30, 0x48	; 72
+ 54a:	f8 07       	cpc	r31, r24
+ 54c:	b1 f7       	brne	.-20     	; 0x53a <camera_reset+0x20>
+ 54e:	81 e0       	ldi	r24, 0x01	; 1
+		if (*resp_ptr++ != *ref_ptr++) return 0;
+	return 1;
+}
+ 550:	df 91       	pop	r29
+ 552:	cf 91       	pop	r28
+ 554:	08 95       	ret
+
+00000556 <camera_getSize>:
+//	fprintf(stdout, "\n\r\n\r");
+}
+
+/* Read the size of the JPEG file. 2-byte response stored in argument.
+   Return 1 if successful, 0 if failed. */
+int camera_getSize(unsigned int *response){
+ 556:	0f 93       	push	r16
+ 558:	1f 93       	push	r17
+ 55a:	cf 93       	push	r28
+ 55c:	df 93       	push	r29
+ 55e:	8c 01       	movw	r16, r24
+	unsigned char *resp_ptr = CAM_RESPONSE;
+	unsigned char *ref_ptr = GS_Response;
+ 560:	c4 e1       	ldi	r28, 0x14	; 20
+ 562:	d1 e0       	ldi	r29, 0x01	; 1
+	int i;
+	camera_sendCommand(GET_SIZE, CAM_RESPONSE, 5, 9);
+ 564:	29 e0       	ldi	r18, 0x09	; 9
+ 566:	30 e0       	ldi	r19, 0x00	; 0
+ 568:	45 e0       	ldi	r20, 0x05	; 5
+ 56a:	50 e0       	ldi	r21, 0x00	; 0
+ 56c:	64 e4       	ldi	r22, 0x44	; 68
+ 56e:	71 e0       	ldi	r23, 0x01	; 1
+ 570:	8f e0       	ldi	r24, 0x0F	; 15
+ 572:	91 e0       	ldi	r25, 0x01	; 1
+ 574:	0e 94 2b 02 	call	0x456	; 0x456 <camera_sendCommand>
+ 578:	e4 e4       	ldi	r30, 0x44	; 68
+ 57a:	f1 e0       	ldi	r31, 0x01	; 1
+	for (i = 0; i < 7; i++)
+		if (*resp_ptr++ != *ref_ptr++) return 0;
+ 57c:	99 91       	ld	r25, Y+
+ 57e:	80 81       	ld	r24, Z
+ 580:	89 17       	cp	r24, r25
+ 582:	19 f0       	breq	.+6      	; 0x58a <camera_getSize+0x34>
+ 584:	20 e0       	ldi	r18, 0x00	; 0
+ 586:	30 e0       	ldi	r19, 0x00	; 0
+ 588:	10 c0       	rjmp	.+32     	; 0x5aa <camera_getSize+0x54>
+ 58a:	31 96       	adiw	r30, 0x01	; 1
+int camera_getSize(unsigned int *response){
+	unsigned char *resp_ptr = CAM_RESPONSE;
+	unsigned char *ref_ptr = GS_Response;
+	int i;
+	camera_sendCommand(GET_SIZE, CAM_RESPONSE, 5, 9);
+	for (i = 0; i < 7; i++)
+ 58c:	81 e0       	ldi	r24, 0x01	; 1
+ 58e:	eb 34       	cpi	r30, 0x4B	; 75
+ 590:	f8 07       	cpc	r31, r24
+ 592:	a1 f7       	brne	.-24     	; 0x57c <camera_getSize+0x26>
+		if (*resp_ptr++ != *ref_ptr++) return 0;
+	*response = (unsigned int) (((*resp_ptr) << 8) | (*(resp_ptr+1)));
+ 594:	21 81       	ldd	r18, Z+1	; 0x01
+ 596:	30 e0       	ldi	r19, 0x00	; 0
+ 598:	90 81       	ld	r25, Z
+ 59a:	80 e0       	ldi	r24, 0x00	; 0
+ 59c:	28 2b       	or	r18, r24
+ 59e:	39 2b       	or	r19, r25
+ 5a0:	f8 01       	movw	r30, r16
+ 5a2:	31 83       	std	Z+1, r19	; 0x01
+ 5a4:	20 83       	st	Z, r18
+ 5a6:	21 e0       	ldi	r18, 0x01	; 1
+ 5a8:	30 e0       	ldi	r19, 0x00	; 0
+	return 1;
+}
+ 5aa:	c9 01       	movw	r24, r18
+ 5ac:	df 91       	pop	r29
+ 5ae:	cf 91       	pop	r28
+ 5b0:	1f 91       	pop	r17
+ 5b2:	0f 91       	pop	r16
+ 5b4:	08 95       	ret
+
+000005b6 <camera_getFile>:
+	return 1;
+}
+
+/* Get the stored JPEG file and send it through bluetooth.
+   Return 1 if successful, 0 if failed. */
+char camera_getFile(void){
+ 5b6:	8f 92       	push	r8
+ 5b8:	9f 92       	push	r9
+ 5ba:	af 92       	push	r10
+ 5bc:	bf 92       	push	r11
+ 5be:	cf 92       	push	r12
+ 5c0:	df 92       	push	r13
+ 5c2:	ef 92       	push	r14
+ 5c4:	ff 92       	push	r15
+ 5c6:	0f 93       	push	r16
+ 5c8:	1f 93       	push	r17
+ 5ca:	df 93       	push	r29
+ 5cc:	cf 93       	push	r28
+ 5ce:	cd b7       	in	r28, 0x3d	; 61
+ 5d0:	de b7       	in	r29, 0x3e	; 62
+ 5d2:	a2 97       	sbiw	r28, 0x22	; 34
+ 5d4:	0f b6       	in	r0, 0x3f	; 63
+ 5d6:	f8 94       	cli
+ 5d8:	de bf       	out	0x3e, r29	; 62
+ 5da:	0f be       	out	0x3f, r0	; 63
+ 5dc:	cd bf       	out	0x3d, r28	; 61
+	int i, addr = 0; // read blocks starting from addr = 0.
+	unsigned int size;
+	char resp[BLOCKSIZE];
+	if (!camera_getSize(&size)) return 0;
+ 5de:	ce 01       	movw	r24, r28
+ 5e0:	01 96       	adiw	r24, 0x01	; 1
+ 5e2:	0e 94 ab 02 	call	0x556	; 0x556 <camera_getSize>
+ 5e6:	89 2b       	or	r24, r25
+ 5e8:	79 f1       	breq	.+94     	; 0x648 <camera_getFile+0x92>
+ 5ea:	ee 24       	eor	r14, r14
+ 5ec:	ff 24       	eor	r15, r15
+
+	while (addr < 150000){
+		if (!camera_getBlock(resp, addr)) return 0;
+ 5ee:	43 e0       	ldi	r20, 0x03	; 3
+ 5f0:	84 2e       	mov	r8, r20
+ 5f2:	91 2c       	mov	r9, r1
+ 5f4:	8c 0e       	add	r8, r28
+ 5f6:	9d 1e       	adc	r9, r29
+ 5f8:	32 e0       	ldi	r19, 0x02	; 2
+ 5fa:	a3 2e       	mov	r10, r19
+ 5fc:	b1 2c       	mov	r11, r1
+ 5fe:	ac 0e       	add	r10, r28
+ 600:	bd 1e       	adc	r11, r29
+		for (i=0; i<BLOCKSIZE; i++){
+ 602:	22 e2       	ldi	r18, 0x22	; 34
+ 604:	c2 2e       	mov	r12, r18
+ 606:	d1 2c       	mov	r13, r1
+ 608:	cc 0e       	add	r12, r28
+ 60a:	dd 1e       	adc	r13, r29
+	unsigned int size;
+	char resp[BLOCKSIZE];
+	if (!camera_getSize(&size)) return 0;
+
+	while (addr < 150000){
+		if (!camera_getBlock(resp, addr)) return 0;
+ 60c:	b7 01       	movw	r22, r14
+ 60e:	c4 01       	movw	r24, r8
+ 610:	0e 94 c7 01 	call	0x38e	; 0x38e <camera_getBlock>
+ 614:	89 2b       	or	r24, r25
+ 616:	c1 f0       	breq	.+48     	; 0x648 <camera_getFile+0x92>
+ 618:	85 01       	movw	r16, r10
+		for (i=0; i<BLOCKSIZE; i++){
+			bt_sendPicture(resp[i]);
+ 61a:	f8 01       	movw	r30, r16
+ 61c:	81 81       	ldd	r24, Z+1	; 0x01
+ 61e:	0e 94 75 01 	call	0x2ea	; 0x2ea <bt_sendPicture>
+			if ((resp[i] == 0xD9) && (resp[i-1] == 0xFF)) return 1;
+ 622:	f8 01       	movw	r30, r16
+ 624:	81 81       	ldd	r24, Z+1	; 0x01
+ 626:	89 3d       	cpi	r24, 0xD9	; 217
+ 628:	29 f4       	brne	.+10     	; 0x634 <camera_getFile+0x7e>
+ 62a:	80 81       	ld	r24, Z
+ 62c:	8f 3f       	cpi	r24, 0xFF	; 255
+ 62e:	11 f4       	brne	.+4      	; 0x634 <camera_getFile+0x7e>
+ 630:	81 e0       	ldi	r24, 0x01	; 1
+ 632:	0b c0       	rjmp	.+22     	; 0x64a <camera_getFile+0x94>
+ 634:	0f 5f       	subi	r16, 0xFF	; 255
+ 636:	1f 4f       	sbci	r17, 0xFF	; 255
+	char resp[BLOCKSIZE];
+	if (!camera_getSize(&size)) return 0;
+
+	while (addr < 150000){
+		if (!camera_getBlock(resp, addr)) return 0;
+		for (i=0; i<BLOCKSIZE; i++){
+ 638:	0c 15       	cp	r16, r12
+ 63a:	1d 05       	cpc	r17, r13
+ 63c:	71 f7       	brne	.-36     	; 0x61a <camera_getFile+0x64>
+			bt_sendPicture(resp[i]);
+			if ((resp[i] == 0xD9) && (resp[i-1] == 0xFF)) return 1;
+		}
+		addr += BLOCKSIZE;
+ 63e:	80 e2       	ldi	r24, 0x20	; 32
+ 640:	90 e0       	ldi	r25, 0x00	; 0
+ 642:	e8 0e       	add	r14, r24
+ 644:	f9 1e       	adc	r15, r25
+ 646:	e2 cf       	rjmp	.-60     	; 0x60c <camera_getFile+0x56>
+	}
+ 648:	80 e0       	ldi	r24, 0x00	; 0
+	return 1;
+}
+ 64a:	a2 96       	adiw	r28, 0x22	; 34
+ 64c:	0f b6       	in	r0, 0x3f	; 63
+ 64e:	f8 94       	cli
+ 650:	de bf       	out	0x3e, r29	; 62
+ 652:	0f be       	out	0x3f, r0	; 63
+ 654:	cd bf       	out	0x3d, r28	; 61
+ 656:	cf 91       	pop	r28
+ 658:	df 91       	pop	r29
+ 65a:	1f 91       	pop	r17
+ 65c:	0f 91       	pop	r16
+ 65e:	ff 90       	pop	r15
+ 660:	ef 90       	pop	r14
+ 662:	df 90       	pop	r13
+ 664:	cf 90       	pop	r12
+ 666:	bf 90       	pop	r11
+ 668:	af 90       	pop	r10
+ 66a:	9f 90       	pop	r9
+ 66c:	8f 90       	pop	r8
+ 66e:	08 95       	ret
+
+00000670 <camera_init>:
+// UART file descriptor
+// putchar_1 and getchar_1 are in uart.c; using channel 1 for stdio 
+//FILE uart_str = FDEV_SETUP_STREAM(uart_putchar_0, uart_getchar_0, _FDEV_SETUP_RW);
+
+/* Initialize camera. Return 1 if successful, 0 if failed. */
+int camera_init(void){
+ 670:	40 e0       	ldi	r20, 0x00	; 0
+ 672:	60 e0       	ldi	r22, 0x00	; 0
+ 674:	76 e9       	ldi	r23, 0x96	; 150
+ 676:	80 e0       	ldi	r24, 0x00	; 0
+ 678:	90 e0       	ldi	r25, 0x00	; 0
+ 67a:	0e 94 8d 00 	call	0x11a	; 0x11a <uart_init_1>
+	// channel 1 UART at 38400 baud, not using interrupt 
+	// channel 0 UART at 9600 baud without interrupt to echo to computer
+//	uart_init_0(9600, 0);
+	uart_init_1(38400, 0);
+	return 1;
+}
+ 67e:	81 e0       	ldi	r24, 0x01	; 1
+ 680:	90 e0       	ldi	r25, 0x00	; 0
+ 682:	08 95       	ret
+
+00000684 <__udivmodsi4>:
+ 684:	a1 e2       	ldi	r26, 0x21	; 33
+ 686:	1a 2e       	mov	r1, r26
+ 688:	aa 1b       	sub	r26, r26
+ 68a:	bb 1b       	sub	r27, r27
+ 68c:	fd 01       	movw	r30, r26
+ 68e:	0d c0       	rjmp	.+26     	; 0x6aa <__udivmodsi4_ep>
+
+00000690 <__udivmodsi4_loop>:
+ 690:	aa 1f       	adc	r26, r26
+ 692:	bb 1f       	adc	r27, r27
+ 694:	ee 1f       	adc	r30, r30
+ 696:	ff 1f       	adc	r31, r31
+ 698:	a2 17       	cp	r26, r18
+ 69a:	b3 07       	cpc	r27, r19
+ 69c:	e4 07       	cpc	r30, r20
+ 69e:	f5 07       	cpc	r31, r21
+ 6a0:	20 f0       	brcs	.+8      	; 0x6aa <__udivmodsi4_ep>
+ 6a2:	a2 1b       	sub	r26, r18
+ 6a4:	b3 0b       	sbc	r27, r19
+ 6a6:	e4 0b       	sbc	r30, r20
+ 6a8:	f5 0b       	sbc	r31, r21
+
+000006aa <__udivmodsi4_ep>:
+ 6aa:	66 1f       	adc	r22, r22
+ 6ac:	77 1f       	adc	r23, r23
+ 6ae:	88 1f       	adc	r24, r24
+ 6b0:	99 1f       	adc	r25, r25
+ 6b2:	1a 94       	dec	r1
+ 6b4:	69 f7       	brne	.-38     	; 0x690 <__udivmodsi4_loop>
+ 6b6:	60 95       	com	r22
+ 6b8:	70 95       	com	r23
+ 6ba:	80 95       	com	r24
+ 6bc:	90 95       	com	r25
+ 6be:	9b 01       	movw	r18, r22
+ 6c0:	ac 01       	movw	r20, r24
+ 6c2:	bd 01       	movw	r22, r26
+ 6c4:	cf 01       	movw	r24, r30
+ 6c6:	08 95       	ret
+
+000006c8 <_exit>:
+ 6c8:	f8 94       	cli
+
+000006ca <__stop_program>:
+ 6ca:	ff cf       	rjmp	.-2      	; 0x6ca <__stop_program>
